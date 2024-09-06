@@ -2,8 +2,11 @@
 #include <parsing.h>
 #include <math.h>
 // implement interpolation here
-int interpolation(uint16_t channel) {
-	// write interpolation code here
+int interpolate_sbus_to_sabertooth(int sbus_value) {
+    // Assuming SBUS value ranges from 0 to 2047 and we need to map it to 0 to 127
+    return (sbus_value * 127) / 2047;
+}
+
 }
 // creating 11 bit channel
 uint16_t *parse_buffer(uint8_t buff[]) { 
